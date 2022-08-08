@@ -1,0 +1,276 @@
+:root {
+    --primary-color: #363636;
+    --secondary-color: #FFFFFF;
+    --success-color: #00d600;
+    --infos-color: #002db3;
+    --warning-color: #FFCC00;
+    --danger-color: #FF2020;
+
+    --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    --primary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --secondary-font: 'Times New Roman', Times, serif;
+}
+
+* {
+    font-family: var(--primary-font);
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+}
+
+button {
+    border: none;
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.radius {
+    border-radius: 6px;
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.bg-primary-color {
+    background-color: var(--primary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.bg-secondary-color {
+    background-color: var(--secondary-color);
+}
+
+.primary-border {
+    border: 1px solid var(--primary-color);
+}
+
+.font-weight-semibold {
+    font-weight: 600;
+}
+
+.overflow-y {
+    overflow-y: auto;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.z-index {
+    z-index: 1;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+header {
+    height: 80px;
+}
+
+.header-logo {
+    width: 80px;
+}
+
+.header-call-btn {
+    font-size: 14;
+}
+
+.header-call-btn-icon {
+    position: relative; 
+    top: 5px; 
+    right: 2px; 
+    font-size: 22px;
+}
+
+.filter-bar-search-input {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.filter-bar-range-input-label {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+#filter-bar-range-input-2 {
+    position: relative;
+    right: 10px;
+}
+
+.filter-bar-category-image {
+    width: 50px;
+    height: 50px;
+}
+
+.filter-bar-category-name {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.products {
+    height: 682px;
+}
+
+.product {
+    width: 200px;
+}
+
+.product-image {
+    height: 200px;
+}
+
+.product-description {
+    font-size: 15px;
+}
+
+.product-add-btn {
+    font-size: 14px;
+}
+
+.product-add-btn:hover {
+    color: var(--secondary-color);
+}
+
+.cart {
+    max-width: 350px;
+}
+
+.cart-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.cart-products {
+    width: 90%;
+    height: 400px;
+}
+
+.cart-product {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+}
+
+.cart-product-image {
+    width: 70px;
+    height: 70px;
+    grid-row: 1 / 3;
+}
+
+.cart-product-name {
+    font-size: 17px;
+}
+
+.cart-product-remove-icon {
+    position: relative;
+    top: 5px;
+    right: 2px;
+    font-size: 20px;
+}
+
+.cart-product-amount-add-icon {
+    position: relative;
+    top: 5px;
+    font-size: 22px;
+}
+
+.cart-product-amount-remove-icon {
+    position: relative;
+    top: 5px;
+    font-size: 22px;
+}
+
+.cart-total-container {
+    width: 90%;
+}
+
+.footer-social-icon {
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+    right: 2px;
+}
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#modal-container-1 {
+    background-color: #000000;
+}
+
+#modal-container-2 {
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.custom-modal {
+    width: 600px;
+    position: relative;
+}
+
+#custom-modal-1 {
+    height: 600px;
+}
+
+.modal-close-container {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal-close-icon {
+    font-size: 28px;
+}
+
+.order-sent-icon {
+    font-size: 50px;
+}
+
+@media screen and (max-width: 850px) {
+    .filter-bar-search-input {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .products {
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .custom-modal {
+        width: 300px;
+    }
+
+    #custom-modal-1 {
+        height: 300px;
+    }
+}
+
+html {
+    overflow-x: hidden;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#363636" />
+    <link rel="icon" href="../static/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/admin.css" />
+    <title>Administration</title>
+</head>
+<body>
+    <input id="token" type="hidden" />
+    <div class="d-flex w-100 h-100 bg-primary-color overflow z-index justify-content-center align-items-center modal-container" id="modal-container-1">
+        <div class="primary-color bg-secondary-color shadow radius d-flex justify-content-center align-items-center custom-modal p-5">
+            <form class="login-form">
+                <h4 class="mb-4 text-center">Connexion</h4>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="phone">Téléphone:</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="phone" placeholder="Votre téléphone">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="password">Mot de passe:</label>
+                    <input type="password" class="form-control shadow radius primary-border primary-color px-3 py-2" id="password" placeholder="Votre mot de passe">
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn font-weight-semibold primary-color bg-secondary-color shadow radius px-5 py-2 login-btn">Connexion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-none w-100 h-100 overflow z-index justify-content-center align-items-center modal-container" id="modal-container-2">
+        <div class="primary-color bg-secondary-color shadow radius d-flex justify-content-center align-items-center custom-modal p-5">
+            <button class="btn bg-danger secondary-color radius d-flex justify-content-center align-items-center modal-close-btn">
+                <i class="material-icons modal-close-icon">close</i>
+            </button>
+            <form class="data-form" enctype="multipart/form-data"></form>
+        </div>
+    </div>
+    <main class="primary-color d-flex justify-content-center align-items-center flex-column">
+        <h2 class="text-center my-5">Administration</h2>
+        <div class="p-5 d-flex justify-content-center align-items-center flex-column">
+            <h4 class="text-center mb-5">Commandes</h4>
+            <table class="shadow radius overflow-y table table-hover table-stripped table-responsive text-center custom-table">
+                <thead class="secondary-color bg-primary-color font-weight-semibold">
+                    <td>N°</td>
+                    <td>Produit</td>
+                    <td>Quantité</td>
+                    <td>Prénom</td>
+                    <td>Nom</td>
+                    <td>Adresse</td>
+                    <td>Ville</td>
+                    <td>Téléphone</td>
+                    <td>Crée le</td>
+                    <td>Supprimer</td>
+                </thead>
+                <tbody class="orders"></tbody>
+            </table>				 
+        </div>
+        <div class="p-5 d-flex justify-content-center align-items-center flex-column">
+            <h4 class="text-center mb-5">Produits</h4>
+            <table class="shadow radius overflow-y table table-hover table-stripped table-responsive text-center custom-table">
+                <thead class="secondary-color bg-primary-color font-weight-semibold">
+                    <td>N°</td>
+                    <td>Image</td>
+                    <td>Nom</td>
+                    <td>Description</td>
+                    <td>Prix</td>
+                    <td>Quantité</td>
+                    <td>Catégorie</td>
+                    <td>Crée le</td>
+                    <td>Modifier</td>
+                    <td>Supprimer</td>
+                </thead>
+                <tbody class="products"></tbody>
+                <button class="btn bg-primary-color secondary-color shadow rounded-circle d-flex justify-content-center align-items-center add-btn" onClick="postData('products')">
+                    <i class="material-icons">add</i>
+                </button>
+            </table>				 
+        </div>
+        <div class="p-5 d-flex justify-content-center align-items-center flex-column">
+            <h4 class="text-center mb-5">Catégories</h4>
+            <table class="shadow radius overflow-y table table-hover table-stripped table-responsive text-center custom-table">
+                <thead class="secondary-color bg-primary-color font-weight-semibold">
+                    <td>N°</td>
+                    <td>Image</td>
+                    <td>Nom</td>
+                    <td>Crée le</td>
+                    <td>Modifier</td>
+                    <td>Supprimer</td>
+                </thead>
+                <tbody class="categories"></tbody>
+                <button class="btn bg-primary-color secondary-color shadow rounded-circle d-flex justify-content-center align-items-center add-btn" onClick="postData('categories')">
+                    <i class="material-icons">add</i>
+                </button>
+            </table>				 
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>

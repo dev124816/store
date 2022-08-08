@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#363636" />
+    <meta name="description" content="Boutique en ligne." />
+    <link rel="icon" href="../static/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Boutique</title>
+</head>
+<body>
+    <div class="d-none w-100 h-100 overflow z-index justify-content-center align-items-center modal-container" id="modal-container-1">
+        <div class="shadow radius custom-modal" id="custom-modal-1">
+            <div class="radius secondary-color pointer d-flex justify-content-center align-items-center bg-danger modal-close-container">
+                <i class="material-icons modal-close-icon">close</i>
+            </div>
+            <img class="radius product-display-image w-100 h-100" alt="Produit" />
+        </div>
+    </div>
+    <div class="d-none w-100 h-100 overflow z-index justify-content-center align-items-center modal-container" id="modal-container-2">
+        <div class="primary-color bg-secondary-color shadow radius custom-modal p-5">
+            <div class="radius secondary-color pointer d-flex justify-content-center align-items-center bg-danger modal-close-container">
+                <i class="material-icons modal-close-icon">close</i>
+            </div>
+            <form class="order-form">
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="first_name">Prénom:</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="first_name" placeholder="Votre prénom">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="last_name">Nom:</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="last_name" placeholder="Votre nom">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="address">Adresse:</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="address" placeholder="Votre adresse">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="city">Ville:</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="city" placeholder="Votre ville">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="font-weight-semibold" for="phone">Téléphone</label>
+                    <input type="text" class="form-control shadow radius primary-border primary-color px-3 py-2" id="phone" placeholder="Votre téléphone">
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn font-weight-semibold primary-color bg-secondary-color shadow radius px-5 py-2 validate-btn">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-none w-100 h-100 overflow z-index justify-content-center align-items-center modal-container" id="modal-container-3">
+        <div class="secondary-color bg-primary-color shadow radius p-5 custom-modal">
+            <div class="radius secondary-color pointer d-flex justify-content-center align-items-center bg-danger modal-close-container">
+                <i class="material-icons modal-close-icon">close</i>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h3 class="mb-3">Commande Envoyée !</h3>
+                <i class="material-icons order-sent-icon mb-3">check_circle_outline</i>
+                <p class="font-weight-semibold">N°<span class="order-id"></span></p>
+            </div>
+        </div>
+    </div>
+    <header class="shadow w-100 header">
+        <div class="row">
+            <div class="col-5 col-md-6">
+                <a class="h-100" href="/">
+                    <img class="h-100 ml-3 header-logo" src="../static/images/logo.png" alt="Logo" />
+                </a>
+            </div>
+            <div class="col-7 col-md-6 d-flex justify-content-end align-items-center pr-5">
+                <a class="btn primary-color bg-secondary-color font-weight-semibold shadow radius d-flex px-3 py-2 header-call-btn" href="tel:+212646600132">
+                    <i class="material-icons header-call-btn-icon">call</i>
+                    +212 622 222 222                 
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="py-5">
+        <div class="row d-flex justify-content-center align-items-center mb-5">
+            <div class="col-10 primary-border shadow radius d-flex justify-content-around align-items-center flex-wrap p-4 filter-bar">
+                <input class="shadow radius px-3 py-2 filter-bar-search-input filter-bar-search-input-description" type="search" placeholder="Rechercher par description" />
+                <input class="shadow radius px-3 py-2 filter-bar-search-input filter-bar-search-input-name" type="search" placeholder="Rechercher par nom" />
+                <div class="d-flex justify-content-center align-items-center flex-column filter-bar-range-input-container">
+                    <p class="font-weight-semibold filter-bar-range-input-label">
+                        Prix max:
+                        <span class="filter-bar-range-input-value">1000</span>
+                        MAD
+                    </p>
+                    <input class="shadow filter-bar-range-input" type="range" min="50" max="1000" value="1000" />
+                </div>
+                <div class="d-flex justify-content-center flex-wrap mt-4">
+                        <div class="shadow radius pointer d-flex justify-content-between align-items-center flex-column px-4 py-3 mr-3 mb-3 filter-bar-category">
+                            <input class="filter-bar-category-id" type="hidden" value="0" />
+                            <img class="filter-bar-category-image mb-2" src="../static/images/categories/all.png" alt="Catégorie" />
+                            <p class="font-weight-semibold primary-color filter-bar-category-name">tous</p>
+                        </div>                    
+                    {% for category in data.categories %}
+                        <div class="shadow radius pointer d-flex justify-content-between align-items-center flex-column px-4 py-3 mr-3 mb-3 filter-bar-category">
+                            <input class="filter-bar-category-id" type="hidden" value="{{ category.id }}" />
+                            <img class="filter-bar-category-image mb-2" src="{{ category.image }}" alt="Catégorie" />
+                            <p class="font-weight-semibold primary-color filter-bar-category-name">{{ category.name }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-10 col-md-6 primary-border shadow radius overflow-y d-flex justify-content-center align-items-start flex-wrap p-4 products">
+            {% for product in data.products %}
+                <div class="shadow radius mr-3 mb-3 product">
+                    <input class="product-id" type="hidden" value="{{ product.id }}" />
+                    <input class="product-category-id" type="hidden" value="{{ product.category_id }}" />
+                    <input class="product-quantity" type="hidden" value="{{ product.quantity }}" />
+                    <img class="w-100 radius pointer product-image" src="{{ product.image }}" alt="Produit" />
+                    <div class="p-4 h-50 text-center d-flex justify-content-around align-items-center flex-column">
+                        <h5 class="font-weight-semibold product-name">{{ product.name }}</h5>
+                        <p class="font-weight-semibold product-description">{{ product.description }}</p>
+                        <p class="font-weight-semibold">
+                            <span class="product-price">{{ product.price }}</span> 
+                            MAD
+                        </p>
+                        <button class="btn font-weight-semibold bg-primary-color secondary-color shadow radius product-add-btn">Ajouter au panier</button>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-10 col-md-5 bg-primary-color secondary-color primary-border shadow radius cart">
+                <div class="w-100 d-flex justify-content-center align-items-center">
+                    <img class="cart-logo" src="../static/images/cart_logo.png" alt="Cart Logo" />
+                </div>
+                <div class="overflow-y bg-secondary-color primary-color radius mx-auto cart-products"></div>
+                <div class="mx-auto py-4 d-flex justify-content-center flex-column cart-total-container">
+                    <p class="font-weight-semibold d-flex justify-content-between align-items-center">
+                        <span>Total:</span>
+                        <span>
+                            <span class="cart-total">0.0</span>
+                            MAD
+                        </span>
+                    </p>
+                    <button class="btn font-weight-semibold bg-secondary-color primary-color shadow radius px-3 py-2 checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-primary-color secondary-color font-weight-semibold p-3 d-flex justify-content-between align-items-center flex-wrap">
+        <ul>
+            <li>Adresse:</li>
+            <li>Adresse...</li>
+            <li>Ville, Pays.</li>
+        </ul>
+        <ul>
+            <li>Contact:</li>
+            <li>
+                <a href="tel:+212646600132">
+                    <i class="material-icons footer-social-icon">call</i>
+                    +212 622 222 222
+                </a>
+            </li>
+            <li>
+                <a href="mail:mghari.963@gmail.com">
+                    <i class="material-icons footer-social-icon">mail</i>
+                    example@gmail.com
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>Social:</li>
+            <li>
+                <a href="https://fb.me/example" target="_blank">
+                    <i class="material-icons footer-social-icon">facebook</i>
+                    fb.me/example
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/example" target="_blank">
+                    <i class="material-icons footer-social-icon">whatsapp</i>
+                    wa.me/example
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service_worker.js");
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>
