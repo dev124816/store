@@ -1,4 +1,11 @@
-from flask import Flask, render_template, request, redirect, jsonify, send_file
+from flask import (
+    Flask, 
+    render_template, 
+    request, 
+    redirect, 
+    jsonify, 
+    send_file
+)
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from werkzeug.utils import secure_filename
@@ -7,10 +14,11 @@ from hashlib import sha3_256
 from secrets import token_urlsafe
 from os import path, environ
 
+
 app = Flask(__name__)
 
-app.config['DEBUG'] = False                 
-app.config['SECRET_KEY'] = environ.get('STORE_SECRET_KEY')
+app.config['DEBUG'] = True                 
+app.config['SECRET_KEY'] = '*^x22=bem!t8@(3hj)mbq4&bc&8ms!#-2yq9*g5n*jk1hz)ch3'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite3"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_IMAGE'] = 'static/images'

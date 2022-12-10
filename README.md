@@ -1,4 +1,4 @@
-# Project Boutique
+# Project Store
 
 Web application (PWA)   
 
@@ -18,6 +18,7 @@ Developed by Salim Mghari
 ## Launch:
 
 > - `cd src/`
+> - `pip install -r requirements.txt`
 > - `python main.py`
 
 #### Administration 
