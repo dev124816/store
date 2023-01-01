@@ -1,6 +1,6 @@
 {
-    "name": "Store",
-    "short_name": "Store",
+    "name": "Boutique",
+    "short_name": "Boutique",
     "start_url": "/",
     "scope": ".",
     "icons": [

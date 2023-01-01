@@ -1,4 +1,4 @@
-# Project Store
+# Project Boutique
 
 Web application (PWA)   
 
